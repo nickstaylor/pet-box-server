@@ -27,7 +27,6 @@ app.locals.updatedPets = []
 
 app.get('/api/v1/pets', (request, response) => {
   const pets = app.locals.pets
-  // const updatedPets = app.locals.updatedPets
   response.json({pets})
 });
 
@@ -74,7 +73,6 @@ app.patch('/api/v1/pets/:id', (request, response)=>{
   const updatedPet = request.body
   app.locals.pets.forEach(pet=> {
     if(pet.id === id){
-      const udpatedPet =
       pet.name = updatedPet.name ? updatedPet.name : pet.name
       pet.type = updatedPet.type ? updatedPet.type : pet.type
 
